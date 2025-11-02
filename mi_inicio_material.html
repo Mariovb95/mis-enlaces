@@ -34,8 +34,9 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr); 
             gap: 16px; /* Espaciado más generoso entre iconos (Material You) */
-            /* Subimos ligeramente el grid ajustando el margen superior */
-            margin-top: -40px; /* Ajusta este valor para mover hacia arriba/abajo */
+            /* CAMBIO: Subimos MÁS el grid ajustando el margen superior a -80px */
+            /* Ajusta este valor (-80px, -90px, -100px, etc.) para afinar el centrado */
+            margin-top: -80px; 
         }
         
         /* Estilo individual de cada enlace (botón con solo icono) */
@@ -78,6 +79,7 @@
         }
 
         /* Pequeña etiqueta de fuente */
+        /* Al no haber un footer visible en la imagen, podemos eliminarlo para simplificar el centrado */
         .footer {
             margin-top: 40px; /* Más margen superior para separarlo del grid */
             font-size: 0.75em; /* Un poco más grande para mejor legibilidad */
@@ -103,7 +105,7 @@
             <img src="https://www.google.com/s2/favicons?sz=64&domain=diariodecadiz.es" alt="Diario de Cádiz Icon">
         </a>
         <a href="https://m.filmaffinity.com/es/main.php" class="link-button" title="FilmAffinity">
-            <img src="https://www.google.com/s2/favicons?sz=64&domain=filmaffinity.com" alt="FilmAffinity Icon">
+            <img src="https://m.filmaffinity.com/favicon.ico" alt="FilmAffinity Icon">
         </a>
         <a href="https://backloggd.com/" class="link-button" title="Backloggd">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=backloggd.com" alt="Backloggd Icon">
