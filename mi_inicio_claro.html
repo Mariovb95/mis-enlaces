@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ Mi Inicio Rápido (Tema Claro)</title>
+    <title>⚡ Mi Inicio Rápido (4x3 Móvil)</title>
     <style>
         /* Estilos generales para un look minimalista y claro (Light Mode) */
         body {
@@ -11,7 +11,7 @@
             background-color: #F0F0F0; /* Fondo claro y suave */
             color: #1F1F1F; /* Texto oscuro para contraste */
             margin: 0;
-            padding: 20px;
+            padding: 10px; /* Reducimos el padding general */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -20,57 +20,83 @@
         /* Estilo para el contenedor principal de los enlaces */
         .link-grid {
             width: 100%;
-            max-width: 800px; /* Limita el ancho en pantallas grandes */
+            max-width: 900px; /* Limitamos el ancho ligeramente */
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 2-3 columnas responsivas */
-            gap: 15px;
-            margin-top: 30px;
+            /* CLAVE: Forzamos 4 columnas para dispositivos pequeños */
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 8px; /* Reducimos el espacio entre enlaces */
+            margin-top: 20px;
         }
-
+        
+        /* Media Query para pantallas más pequeñas (teléfonos) */
+        @media (max-width: 600px) {
+            .link-grid {
+                /* Aseguramos 4 columnas en el móvil */
+                grid-template-columns: repeat(4, 1fr);
+                gap: 5px; /* Más compacto en el móvil */
+            }
+            .link-button {
+                padding: 10px 5px; /* Menos padding vertical y horizontal */
+                font-size: 0.8em; /* Hacemos la fuente más pequeña */
+                flex-direction: column; /* Colocamos el icono encima del texto */
+                height: 80px; /* Altura fija para mantener la cuadrícula uniforme */
+                justify-content: space-around; /* Distribuye el espacio entre elementos */
+            }
+            .link-button img {
+                width: 20px;
+                height: 20px;
+                margin: 0 0 5px 0; /* Icono arriba y un poco de margen inferior */
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+        
         /* Estilo individual de cada enlace (botón) */
         .link-button {
-            display: flex; /* Para alinear el icono y el texto */
-            align-items: center; /* Centrar verticalmente */
-            justify-content: center; /* Centrar horizontalmente si el icono es pequeño */
-            padding: 15px 20px;
-            background-color: #FFFFFF; /* Fondo de botón blanco */
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            padding: 15px 10px;
+            background-color: #FFFFFF; 
             color: #1F1F1F;
             text-decoration: none;
-            border: 1px solid #DDDDDD; /* Borde sutil para definir el botón */
-            border-radius: 8px; /* Bordes redondeados */
-            font-size: 1.1em;
+            border: 1px solid #DDDDDD; 
+            border-radius: 8px; 
+            font-size: 1.0em;
             font-weight: bold;
+            text-align: center; /* Asegura que el texto esté centrado si no usamos columna */
             transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
         }
 
         /* Efecto al pasar el ratón o tocar (hover/active) */
         .link-button:hover {
-            background-color: #EAEAEA; /* Fondo ligeramente gris al pasar el ratón */
-            transform: translateY(-2px); /* Pequeño efecto 3D */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra un poco más marcada */
+            background-color: #EAEAEA; 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
         }
         
         /* Estilo para los iconos (favicons) */
         .link-button img {
-            width: 24px;  /* Tamaño del icono */
+            width: 24px;
             height: 24px;
-            margin-right: 10px; /* Espacio entre el icono y el texto */
-            border-radius: 4px; /* Opcional: bordes redondeados para el icono */
-            flex-shrink: 0; /* Asegura que el icono no se encoja */
+            margin-right: 8px; /* Espacio a la derecha del icono */
+            border-radius: 4px; 
+            flex-shrink: 0; 
         }
 
         /* Estilo para los títulos (opcional) */
         h1 {
-            color: #007BFF; /* Color de acento (azul) */
+            color: #007BFF;
             font-size: 2.5em;
             margin-bottom: 10px;
         }
 
         /* Pequeña etiqueta de fuente */
         .footer {
-            margin-top: 40px;
-            font-size: 0.8em;
+            margin-top: 15px; /* Reducimos el margen */
+            font-size: 0.7em;
             color: #666;
         }
     </style>
@@ -90,13 +116,13 @@
         </a>
         <a href="https://www.elotrolado.net/foro_playstation-5-juegos_234" class="link-button">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=elotrolado.net" alt="ElOtroLado Icon">
-            El Otro Lado (PS5)
+            EoL (PS5)
         </a>
-        
         <a href="https://www.diariodecadiz.es/" class="link-button">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=diariodecadiz.es" alt="Diario de Cádiz Icon">
-            Diario de Cádiz
+            D. Cádiz
         </a>
+        
         <a href="https://m.filmaffinity.com/es/main.php" class="link-button">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=filmaffinity.com" alt="FilmAffinity Icon">
             FilmAffinity
@@ -110,22 +136,21 @@
             Marca
         </a>
         <a href="https://mototiming.live/" class="link-button">
-            <img src="https://www.google.com/s2/favicons?sz=64&domain=mototiming.live" alt="Moto Timing Live Icon">
-            Moto Timing Live
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=mototiming.live" alt="Moto Timing" title="Moto Timing Live">
+            Moto Timing
         </a>
 
         <a href="https://www.amazon.es/" class="link-button">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=amazon.es" alt="Amazon Icon">
-            Amazon España
+            Amazon
         </a>
         <a href="https://www.chollometro.com/" class="link-button">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=chollometro.com" alt="Chollometro Icon">
             Chollometro
         </a>
-
         <a href="https://campusvirtual.uca.es/" class="link-button">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=campusvirtual.uca.es" alt="Campus UCA Icon">
-            Campus Virtual UCA
+            Campus UCA
         </a>
         <a href="https://ciencias.uca.es/" class="link-button">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=ciencias.uca.es" alt="Ciencias UCA Icon">
