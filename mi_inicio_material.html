@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Mi Inicio Rápido (Material You)</title>
+    <style>
+        /* Estilos generales Material You (Light Mode) */
+        body {
+            font-family: 'Google Sans', Roboto, sans-serif; /* Fuente Material Design */
+            background-color: #F8F9FA; /* Un gris muy claro para el fondo */
+            color: #1F1F1F; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Centrado vertical principal */
+            height: 100vh; 
+            overflow: hidden; 
+            -webkit-font-smoothing: antialiased; /* Suavizado de fuentes */
+            -moz-osx-font-smoothing: grayscale; /* Suavizado de fuentes */
+        }
+
+        /* Eliminamos el título h1 */
+        h1 {
+            display: none; 
+        }
+
+        /* Estilo para el contenedor principal de los enlaces */
+        .link-grid {
+            width: 100%;
+            max-width: 380px; /* Ancho máximo ajustado para 3 columnas */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 16px; /* Espaciado más generoso entre iconos (Material You) */
+            /* Subimos ligeramente el grid ajustando el margen superior */
+            margin-top: -40px; /* Ajusta este valor para mover hacia arriba/abajo */
+        }
+        
+        /* Estilo individual de cada enlace (botón con solo icono) */
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 96px; /* Un poco más grandes */
+            height: 96px; 
+            background-color: #FFFFFF; 
+            /* CLAVE: Bordes muy redondeados para Material You */
+            border-radius: 28px; /* Ejemplo de squircle-like, ajusta a tu gusto */
+            border: none; /* Quitamos el borde para un look más suave */
+            cursor: pointer; /* Indica que es clickeable */
+
+            /* Sombra más sofisticada Material You */
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), /* Sombra inferior */
+                        0px 1px 2px rgba(0, 0, 0, 0.06); /* Sombra superior */
+            
+            transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            place-self: center; 
+        }
+
+        /* Efecto al pasar el ratón o tocar (hover/active) */
+        .link-button:hover {
+            background-color: #F0F0F0; /* Ligeramente más oscuro al pasar el ratón */
+            transform: translateY(-2px); 
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12),
+                        0px 3px 6px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
+        }
+        
+        /* Estilo para los iconos (favicons) */
+        .link-button img {
+            width: 52px;  /* Iconos un poco más grandes */
+            height: 52px;
+            object-fit: contain;
+            border-radius: 12px; /* Ligeramente redondeado para los iconos */
+            pointer-events: none; 
+        }
+
+        /* Pequeña etiqueta de fuente */
+        .footer {
+            margin-top: 40px; /* Más margen superior para separarlo del grid */
+            font-size: 0.75em; /* Un poco más grande para mejor legibilidad */
+            color: #707070; /* Un gris más suave */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="link-grid">
+        <a href="https://forocoches.com/foro/" class="link-button" title="ForoCoches">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=forocoches.com" alt="ForoCoches Icon">
+        </a>
+        <a href="https://www.mediavida.com/foro/spy" class="link-button" title="Mediavida (Spy)">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=mediavida.com" alt="Mediavida Icon">
+        </a>
+        <a href="https://www.elotrolado.net/foro_playstation-5-juegos_234" class="link-button" title="El Otro Lado (PS5)">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=elotrolado.net" alt="ElOtroLado Icon">
+        </a>
+        
+        <a href="https://www.diariodecadiz.es/" class="link-button" title="Diario de Cádiz">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=diariodecadiz.es" alt="Diario de Cádiz Icon">
+        </a>
+        <a href="https://m.filmaffinity.com/es/main.php" class="link-button" title="FilmAffinity">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=filmaffinity.com" alt="FilmAffinity Icon">
+        </a>
+        <a href="https://backloggd.com/" class="link-button" title="Backloggd">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=backloggd.com" alt="Backloggd Icon">
+        </a>
+        
+        <a href="https://www.marca.com/" class="link-button" title="Marca">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=marca.com" alt="Marca Icon">
+        </a>
+        <a href="https://mototiming.live/" class="link-button" title="Moto Timing Live">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=mototiming.live" alt="Moto Timing Live Icon">
+        </a>
+        <a href="https://www.amazon.es/" class="link-button" title="Amazon España">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=amazon.es" alt="Amazon Icon">
+        </a>
+        
+        <a href="https://www.chollometro.com/" class="link-button" title="Chollometro">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=chollometro.com" alt="Chollometro Icon">
+        </a>
+        <a href="https://campusvirtual.uca.es/" class="link-button" title="Campus Virtual UCA">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=campusvirtual.uca.es" alt="Campus UCA Icon">
+        </a>
+        <a href="https://ciencias.uca.es/" class="link-button" title="Ciencias UCA - Horarios">
+            <img src="https://api.iconify.design/material-symbols/calendar-month-rounded.svg?color=%23007BFF" alt="Icono Horario/Calendario">
+        </a>
+    </div>
+    
+    <p class="footer">Página de inicio personalizada para Brave Android.</p>
+
+</body>
+</html>
