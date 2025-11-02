@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ Mi Inicio Rápido (4x3 Móvil)</title>
+    <title>⚡ Mi Inicio Rápido (Solo Iconos)</title>
     <style>
         /* Estilos generales para un look minimalista y claro (Light Mode) */
         body {
@@ -11,63 +11,46 @@
             background-color: #F0F0F0; /* Fondo claro y suave */
             color: #1F1F1F; /* Texto oscuro para contraste */
             margin: 0;
-            padding: 10px; /* Reducimos el padding general */
+            padding: 10px; 
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center; /* Centrar el contenido verticalmente */
+            min-height: 98vh; /* Para que ocupe casi toda la altura de la pantalla */
+        }
+
+        /* Estilo para el título */
+        h1 {
+            color: #007BFF;
+            font-size: 2.2em; /* Título un poco más pequeño para caber */
+            margin-bottom: 20px; /* Más espacio debajo del título */
+            text-align: center;
         }
 
         /* Estilo para el contenedor principal de los enlaces */
         .link-grid {
             width: 100%;
-            max-width: 900px; /* Limitamos el ancho ligeramente */
+            max-width: 400px; /* Ancho máximo más ajustado para 3 columnas en móvil */
             display: grid;
-            /* CLAVE: Forzamos 4 columnas para dispositivos pequeños */
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 8px; /* Reducimos el espacio entre enlaces */
-            margin-top: 20px;
+            /* CLAVE: 3 columnas para que los iconos sean grandes y quepan */
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 12px; /* Espacio entre los iconos */
+            margin-top: 0; /* Sin margen superior */
         }
         
-        /* Media Query para pantallas más pequeñas (teléfonos) */
-        @media (max-width: 600px) {
-            .link-grid {
-                /* Aseguramos 4 columnas en el móvil */
-                grid-template-columns: repeat(4, 1fr);
-                gap: 5px; /* Más compacto en el móvil */
-            }
-            .link-button {
-                padding: 10px 5px; /* Menos padding vertical y horizontal */
-                font-size: 0.8em; /* Hacemos la fuente más pequeña */
-                flex-direction: column; /* Colocamos el icono encima del texto */
-                height: 80px; /* Altura fija para mantener la cuadrícula uniforme */
-                justify-content: space-around; /* Distribuye el espacio entre elementos */
-            }
-            .link-button img {
-                width: 20px;
-                height: 20px;
-                margin: 0 0 5px 0; /* Icono arriba y un poco de margen inferior */
-            }
-            h1 {
-                font-size: 1.8em;
-            }
-        }
-        
-        /* Estilo individual de cada enlace (botón) */
+        /* Estilo individual de cada enlace (botón con solo icono) */
         .link-button {
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            padding: 15px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centrar el icono dentro del botón */
+            width: 90px; /* Ancho fijo para los botones */
+            height: 90px; /* Altura fija para los botones, haciéndolos cuadrados */
             background-color: #FFFFFF; 
-            color: #1F1F1F;
-            text-decoration: none;
             border: 1px solid #DDDDDD; 
-            border-radius: 8px; 
-            font-size: 1.0em;
-            font-weight: bold;
-            text-align: center; /* Asegura que el texto esté centrado si no usamos columna */
+            border-radius: 12px; /* Bordes más redondeados para un look suave */
             transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            text-decoration: none; /* Eliminar subrayado si hubiera texto oculto */
         }
 
         /* Efecto al pasar el ratón o tocar (hover/active) */
@@ -79,25 +62,19 @@
         
         /* Estilo para los iconos (favicons) */
         .link-button img {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px; /* Espacio a la derecha del icono */
-            border-radius: 4px; 
-            flex-shrink: 0; 
-        }
-
-        /* Estilo para los títulos (opcional) */
-        h1 {
-            color: #007BFF;
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            width: 48px;  /* Tamaño grande para los iconos */
+            height: 48px;
+            object-fit: contain; /* Asegura que la imagen se ajuste sin cortarse */
+            border-radius: 8px; /* Bordes redondeados para los iconos */
+            pointer-events: none; /* Evita que el img capture el clic */
         }
 
         /* Pequeña etiqueta de fuente */
         .footer {
-            margin-top: 15px; /* Reducimos el margen */
+            margin-top: 20px; 
             font-size: 0.7em;
             color: #666;
+            text-align: center;
         }
     </style>
 </head>
@@ -106,55 +83,44 @@
     <h1>Accesos Rápidos</h1>
 
     <div class="link-grid">
-        <a href="https://forocoches.com/foro/" class="link-button">
+        <a href="https://forocoches.com/foro/" class="link-button" title="ForoCoches">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=forocoches.com" alt="ForoCoches Icon">
-            ForoCoches
         </a>
-        <a href="https://www.mediavida.com/foro/spy" class="link-button">
+        <a href="https://www.mediavida.com/foro/spy" class="link-button" title="Mediavida (Spy)">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=mediavida.com" alt="Mediavida Icon">
-            Mediavida (Spy)
         </a>
-        <a href="https://www.elotrolado.net/foro_playstation-5-juegos_234" class="link-button">
+        <a href="https://www.elotrolado.net/foro_playstation-5-juegos_234" class="link-button" title="El Otro Lado (PS5)">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=elotrolado.net" alt="ElOtroLado Icon">
-            EoL (PS5)
-        </a>
-        <a href="https://www.diariodecadiz.es/" class="link-button">
-            <img src="https://www.google.com/s2/favicons?sz=64&domain=diariodecadiz.es" alt="Diario de Cádiz Icon">
-            D. Cádiz
         </a>
         
-        <a href="https://m.filmaffinity.com/es/main.php" class="link-button">
+        <a href="https://www.diariodecadiz.es/" class="link-button" title="Diario de Cádiz">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=diariodecadiz.es" alt="Diario de Cádiz Icon">
+        </a>
+        <a href="https://m.filmaffinity.com/es/main.php" class="link-button" title="FilmAffinity">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=filmaffinity.com" alt="FilmAffinity Icon">
-            FilmAffinity
         </a>
-        <a href="https://backloggd.com/" class="link-button">
+        <a href="https://backloggd.com/" class="link-button" title="Backloggd">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=backloggd.com" alt="Backloggd Icon">
-            Backloggd
         </a>
-        <a href="https://www.marca.com/" class="link-button">
+        
+        <a href="https://www.marca.com/" class="link-button" title="Marca">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=marca.com" alt="Marca Icon">
-            Marca
         </a>
-        <a href="https://mototiming.live/" class="link-button">
-            <img src="https://www.google.com/s2/favicons?sz=64&domain=mototiming.live" alt="Moto Timing" title="Moto Timing Live">
-            Moto Timing
+        <a href="https://mototiming.live/" class="link-button" title="Moto Timing Live">
+            <img src="https://www.google.com/s2/favicons?sz=64&domain=mototiming.live" alt="Moto Timing Live Icon">
         </a>
-
-        <a href="https://www.amazon.es/" class="link-button">
+        <a href="https://www.amazon.es/" class="link-button" title="Amazon España">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=amazon.es" alt="Amazon Icon">
-            Amazon
         </a>
-        <a href="https://www.chollometro.com/" class="link-button">
+        
+        <a href="https://www.chollometro.com/" class="link-button" title="Chollometro">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=chollometro.com" alt="Chollometro Icon">
-            Chollometro
         </a>
-        <a href="https://campusvirtual.uca.es/" class="link-button">
+        <a href="https://campusvirtual.uca.es/" class="link-button" title="Campus Virtual UCA">
             <img src="https://www.google.com/s2/favicons?sz=64&domain=campusvirtual.uca.es" alt="Campus UCA Icon">
-            Campus UCA
         </a>
-        <a href="https://ciencias.uca.es/" class="link-button">
-            <img src="https://www.google.com/s2/favicons?sz=64&domain=ciencias.uca.es" alt="Ciencias UCA Icon">
-            Ciencias UCA
+        <a href="https://ciencias.uca.es/" class="link-button" title="Ciencias UCA - Horarios">
+            <img src="https://i.imgur.com/8Q0vV3y.png" alt="Ciencias UCA Icon"> 
         </a>
     </div>
     
